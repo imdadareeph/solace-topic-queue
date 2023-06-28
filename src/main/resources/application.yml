@@ -1,0 +1,43 @@
+
+spring:
+  config:
+    import: optional:configserver:http://localhost:8082
+  application:
+    name: solace-topic-queue
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/imdadareeph/solace-topic-queue-configs
+          default-label: master
+      uri: https://github.com/imdadareeph/solace-topic-queue-configs
+
+
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
+solace:
+  host: tcp://localhost:55554
+  username: admin
+  password: admin
+  vpnName: default
+  queues:
+    - name: queue1
+      topics:
+        - topic1
+        - topic2
+    - name: queue2
+      topics:
+        - topic3
+        - topic4
+    - name: queue3
+      topics:
+        - topic5
+
+server:
+  port: 8081
+
