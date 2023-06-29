@@ -1,18 +1,5 @@
-
-spring:
-  config:
-    import: optional:configserver:http://localhost:8082
-  application:
-    name: solace-topic-queue
-  cloud:
-    config:
-      server:
-        git:
-          uri: https://github.com/imdadareeph/solace-topic-queue-configs
-          default-label: master
-      uri: https://github.com/imdadareeph/solace-topic-queue-configs
-
-
+server:
+  port: 8081
 
 management:
   endpoints:
@@ -20,24 +7,34 @@ management:
       exposure:
         include: "*"
 
-solace:
-  host: tcp://localhost:55554
-  username: admin
-  password: admin
-  vpnName: default
-  queues:
-    - name: queue1
-      topics:
-        - topic1
-        - topic2
-    - name: queue2
-      topics:
-        - topic3
-        - topic4
-    - name: queue3
-      topics:
-        - topic5
 
-server:
-  port: 8081
+# This part will be fetched from config server
+#
+#solace:
+#  host: tcp://localhost:55554
+#  username: admin
+#  password: admin
+#  vpnName: default
+#  queues:
+#    - name: queue1
+#      topics:
+#        - topic1
+#        - topic2
+#    - name: queue2
+#      topics:
+#        - topic3
+#        - topic4
+#    - name: queue3
+#      topics:
+#        - topic5
 
+
+
+
+logging:
+  level:
+    org.springframework: ERROR
+    com.imdadareeph: DEBUG
+  pattern:
+    console: "%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"
+    file: "%d %p %c{1.} [%t] %m%n"
