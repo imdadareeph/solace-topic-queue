@@ -15,6 +15,7 @@ import java.util.List;
 import java.util.Optional;
 
 @RefreshScope
+@RestController
 @Getter
 @Setter
 @RequiredArgsConstructor
