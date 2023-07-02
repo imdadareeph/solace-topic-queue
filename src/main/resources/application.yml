@@ -8,25 +8,31 @@ management:
         include: "*"
 
 
-# This part will be fetched from config server
-#
+# This part will be fetched from config server from https://github.com/imdadareeph/solace-topic-queue-configs/blob/main/solace-topic-queue/dev/solace-topic-queue-dev.yml
+
 #solace:
-#  host: tcp://localhost:55554
-#  username: admin
-#  password: admin
-#  vpnName: default
-#  queues:
-#    - name: queue1
-#      topics:
-#        - topic1
-#        - topic2
-#    - name: queue2
-#      topics:
-#        - topic3
-#        - topic4
-#    - name: queue3
-#      topics:
-#        - topic5
+##  host: tcp://localhost:55554
+##  username: admin
+##  password: admin
+##  vpnName: default
+##  queues:
+##    - name: ORDER_CREATED
+##      topics:
+##        - orderservice/failed/v1/created
+##        - orderservice/success/v1/completed
+##    - name: PAYMENT_COMPLETED
+##      topics:
+##        - paymentservice/success/v1/completed
+##        - topic4
+##    - name: CART_CREATED
+##      topics:
+##        - cartservice/success/v1/created
+
+
+
+
+
+
 
 
 

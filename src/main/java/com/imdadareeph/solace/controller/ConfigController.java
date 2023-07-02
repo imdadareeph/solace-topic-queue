@@ -35,8 +35,6 @@ public class ConfigController {
         return Optional.ofNullable(solaceConfigProperties)
                 .map(SolaceConfigProperties::getQueues)
                 .orElse(Collections.singletonList(new QueueConfig()));
-        //.map(ObjectUtils::toString)
-        // .orElse("queues not available from config");
 
 
     }
